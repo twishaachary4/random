@@ -135,7 +135,6 @@ let order = [];
 let idx = 0;
 let score = 0;
 let answered = false;
-let sheetNum = 1;
 
 function shuffle(arr) {
   const a = arr.slice();
@@ -146,48 +145,50 @@ function shuffle(arr) {
   return a;
 }
 
-function renderLegend() {
-  const legend = document.getElementById('legend');
-  legend.innerHTML = '<span class="legend-heading">Legend</span>';
+function renderPins() {
+  const pins = document.getElementById('pins');
+  pins.innerHTML = '';
   TOPICS.forEach(topic => {
     const btn = document.createElement('button');
-    btn.className = 'legend-item' + (topic === currentTopic ? ' active' : '');
-    btn.innerHTML = `<span class="legend-swatch"></span>${topic}`;
+    btn.className = 'pin' + (topic === currentTopic ? ' active' : '');
+    btn.textContent = topic;
     btn.onclick = () => {
       if (topic === currentTopic) return;
       currentTopic = topic;
       startQuiz();
     };
-    legend.appendChild(btn);
+    pins.appendChild(btn);
   });
 }
 
-function updateTitleBlock() {
-  document.getElementById('sheetNum').textContent = String(sheetNum).padStart(2, '0');
-  document.getElementById('tbScore').textContent = `${score} / ${order.length}`;
+function heartsRow() {
+  const total = QUESTIONS[currentTopic].length;
+  let out = '';
+  for (let i = 0; i < total; i++) {
+    out += i < score ? '💗' : '🤍';
+  }
+  return out;
 }
 
 function startQuiz() {
   order = shuffle(QUESTIONS[currentTopic].map((_, i) => i));
   idx = 0;
   score = 0;
-  sheetNum++;
-  renderLegend();
-  updateTitleBlock();
+  renderPins();
   renderQuestion();
 }
 
 function renderQuestion() {
-  const main = document.getElementById('drafting');
+  const card = document.getElementById('card');
   answered = false;
-  updateTitleBlock();
 
   if (idx >= order.length) {
-    main.innerHTML = `
+    card.innerHTML = `
       <div class="done">
+        <div class="result-emoji">🎀</div>
         <div class="result">${score}/${order.length}</div>
-        <div class="result-label">${currentTopic}</div>
-        <button class="restart-btn" id="restartBtn">Run again</button>
+        <div class="result-label">on ${currentTopic}</div>
+        <button class="restart-btn" id="restartBtn">Play again</button>
       </div>
     `;
     document.getElementById('restartBtn').onclick = startQuiz;
@@ -195,23 +196,23 @@ function renderQuestion() {
   }
 
   const q = QUESTIONS[currentTopic][order[idx]];
-  const letters = ['A', 'B', 'C', 'D', 'E'];
 
-  main.innerHTML = `
-    <div class="q-meta">Item ${idx + 1} / ${order.length} — ${currentTopic}</div>
+  card.innerHTML = `
+    <div class="q-meta">✎ question ${idx + 1} of ${order.length}</div>
     <div class="q-prompt">${q.q}</div>
     <div class="options" id="options"></div>
     <div class="feedback" id="feedback"></div>
     <div class="foot-row">
-      <button class="next-btn" id="nextBtn">Next →</button>
+      <span class="hearts" id="hearts">${heartsRow()}</span>
+      <button class="next-btn" id="nextBtn">Next ✿</button>
     </div>
   `;
 
   const optionsEl = document.getElementById('options');
   q.options.forEach((opt, i) => {
     const btn = document.createElement('button');
-    btn.className = 'option';
-    btn.innerHTML = `<span class="box">${letters[i]}</span><span>${opt}</span>`;
+    btn.className = `option opt-${i}`;
+    btn.innerHTML = `<span class="bullet">•</span><span>${opt}</span>`;
     btn.onclick = () => selectAnswer(i, q);
     optionsEl.appendChild(btn);
   });
@@ -231,7 +232,7 @@ function selectAnswer(i, q) {
   if (i === q.correct) score++;
   document.getElementById('feedback').textContent = q.note;
   document.getElementById('nextBtn').classList.add('show');
-  updateTitleBlock();
+  document.getElementById('hearts').textContent = heartsRow();
 }
 
 function nextQuestion() {
@@ -239,5 +240,5 @@ function nextQuestion() {
   renderQuestion();
 }
 
-renderLegend();
+renderPins();
 startQuiz();
