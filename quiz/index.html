@@ -3,436 +3,47 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Study Quiz</title>
-<style>
-  :root {
-    --ink: #2b2530;
-    --paper: #faf7f5;
-    --card: #ffffff;
-    --accent: #7c5cbf;
-    --accent-soft: #ede6fb;
-    --correct: #3f8f5f;
-    --wrong: #c2483d;
-    --border: #e4dcf0;
-  }
-
-  * { box-sizing: border-box; }
-
-  body {
-    margin: 0;
-    min-height: 100vh;
-    background: var(--paper);
-    font-family: 'Georgia', 'Iowan Old Style', serif;
-    color: var(--ink);
-    display: flex;
-    justify-content: center;
-    padding: 48px 20px;
-  }
-
-  .wrap {
-    width: 100%;
-    max-width: 620px;
-  }
-
-  header {
-    margin-bottom: 32px;
-  }
-
-  h1 {
-    font-size: 28px;
-    font-weight: 500;
-    margin: 0 0 6px;
-    letter-spacing: 0.2px;
-  }
-
-  .subtitle {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    font-size: 14px;
-    color: #6b6072;
-    margin: 0;
-  }
-
-  .topic-select {
-    margin-top: 20px;
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-  }
-
-  .topic-btn {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    font-size: 13px;
-    padding: 7px 14px;
-    border-radius: 20px;
-    border: 1px solid var(--border);
-    background: var(--card);
-    color: var(--ink);
-    cursor: pointer;
-  }
-
-  .topic-btn.active {
-    background: var(--accent);
-    border-color: var(--accent);
-    color: white;
-  }
-
-  .card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    padding: 36px 32px;
-    position: relative;
-  }
-
-  .progress {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    font-size: 12px;
-    color: #8a7f92;
-    margin-bottom: 18px;
-  }
-
-  .prompt {
-    font-size: 20px;
-    line-height: 1.45;
-    margin-bottom: 26px;
-  }
-
-  .options {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .option {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    text-align: left;
-    padding: 13px 16px;
-    border-radius: 4px;
-    border: 1px solid var(--border);
-    background: var(--paper);
-    font-size: 15px;
-    cursor: pointer;
-    transition: border-color 0.15s ease;
-  }
-
-  .option:hover:not(:disabled) {
-    border-color: var(--accent);
-  }
-
-  .option.correct {
-    border-color: var(--correct);
-    background: #eef7f0;
-  }
-
-  .option.wrong {
-    border-color: var(--wrong);
-    background: #fbeeed;
-  }
-
-  .option:disabled {
-    cursor: default;
-  }
-
-  .feedback {
-    margin-top: 20px;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    font-size: 14px;
-    line-height: 1.5;
-    color: #4a4250;
-    min-height: 20px;
-  }
-
-  .footer-row {
-    margin-top: 26px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .next-btn {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    font-size: 14px;
-    padding: 9px 20px;
-    border-radius: 4px;
-    border: none;
-    background: var(--accent);
-    color: white;
-    cursor: pointer;
-    visibility: hidden;
-  }
-
-  .next-btn.show {
-    visibility: visible;
-  }
-
-  .score {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    font-size: 13px;
-    color: #8a7f92;
-  }
-
-  .done {
-    text-align: center;
-    padding: 40px 20px;
-  }
-
-  .done h2 {
-    font-weight: 500;
-    font-size: 24px;
-    margin-bottom: 8px;
-  }
-
-  .restart-btn {
-    margin-top: 20px;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    font-size: 14px;
-    padding: 10px 22px;
-    border-radius: 4px;
-    border: 1px solid var(--accent);
-    background: var(--accent-soft);
-    color: var(--accent);
-    cursor: pointer;
-  }
-</style>
+<title>Study Quiz — Sheet 01</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="wrap">
-  <header>
-    <h1>Study Quiz</h1>
-    <p class="subtitle">Numerical methods, AI &amp; applications, Python, mechanical engineering</p>
-    <div class="topic-select" id="topicSelect"></div>
+
+<div class="sheet">
+
+  <div class="reg reg-tl"></div>
+  <div class="reg reg-tr"></div>
+  <div class="reg reg-bl"></div>
+  <div class="reg reg-br"></div>
+
+  <header class="titleblock">
+    <div class="tb-field">
+      <span class="tb-label">Sheet</span>
+      <span class="tb-value" id="sheetNum">01</span>
+    </div>
+    <div class="tb-title">
+      <h1>Study Quiz</h1>
+      <p>Numerical methods · AI &amp; applications · Python · mechanical engineering</p>
+    </div>
+    <div class="tb-field tb-right">
+      <span class="tb-label">Score</span>
+      <span class="tb-value" id="tbScore">0 / 0</span>
+    </div>
   </header>
-  <div class="card" id="card"></div>
+
+  <div class="body">
+
+    <nav class="legend" id="legend">
+      <span class="legend-heading">Legend</span>
+    </nav>
+
+    <main class="drafting" id="drafting"></main>
+
+  </div>
+
 </div>
 
-<script>
-const QUESTIONS = {
-  "Numerical Methods": [
-    {
-      q: "Which method requires two initial guesses that bracket the root and always converges if a valid bracket is chosen?",
-      options: ["Newton-Raphson", "Bisection", "Secant", "Gauss-Seidel"],
-      correct: 1,
-      note: "Bisection halves the bracketing interval each iteration, so it's guaranteed to converge, though slowly, as long as the root is bracketed."
-    },
-    {
-      q: "Newton-Raphson requires which of the following at each step?",
-      options: ["Two previous guesses only", "The function's derivative", "A bracketing interval", "A matrix inverse"],
-      correct: 1,
-      note: "Newton-Raphson uses the tangent line at the current guess, so it needs f'(x) at each step."
-    },
-    {
-      q: "Gauss-Seidel and Jacobi's method are both used to solve what kind of problem?",
-      options: ["Single nonlinear equations", "Systems of linear equations", "Differential equations", "Root bracketing"],
-      correct: 1,
-      note: "Both are iterative methods for solving systems of linear equations, with Gauss-Seidel using updated values immediately within each iteration."
-    },
-    {
-      q: "In LU decomposition, a matrix A is factored into:",
-      options: ["A = L + U", "A = LU, lower and upper triangular matrices", "A = L / U", "A = U - L"],
-      correct: 1,
-      note: "LU decomposition writes A as the product of a lower triangular matrix L and an upper triangular matrix U, which simplifies solving Ax = b."
-    },
-    {
-      q: "Compared to Newton-Raphson, the Secant method's key difference is that it:",
-      options: ["Needs the derivative explicitly", "Approximates the derivative using two prior points", "Only works on linear systems", "Always converges in one step"],
-      correct: 1,
-      note: "The Secant method replaces the derivative with a finite-difference approximation using the two most recent guesses, avoiding the need for an analytic derivative."
-    }
-  ],
-  "AI & Applications": [
-    {
-      q: "Naïve Bayes classifiers are called 'naïve' because they assume:",
-      options: ["All features are equally important", "Features are conditionally independent given the class", "The data is linearly separable", "There is only one class label"],
-      correct: 1,
-      note: "The 'naïve' assumption is that features contribute independently to the outcome, which rarely holds exactly in practice but works well anyway."
-    },
-    {
-      q: "KNN (K-Nearest Neighbors) classifies a new point based on:",
-      options: ["A learned decision boundary equation", "The majority class among its closest neighbors", "Maximizing distance from all points", "A probability distribution over classes"],
-      correct: 1,
-      note: "KNN looks at the K closest labeled points and assigns the class that appears most often among them."
-    },
-    {
-      q: "Which heuristic search algorithm uses both path cost and estimated distance to the goal?",
-      options: ["Breadth-first search", "Depth-first search", "A* search", "Random search"],
-      correct: 2,
-      note: "A* combines g(n), the cost so far, with h(n), a heuristic estimate to the goal, to guide search efficiently."
-    },
-    {
-      q: "SVM (Support Vector Machine) aims to find a decision boundary that:",
-      options: ["Minimizes the number of support vectors", "Maximizes the margin between classes", "Groups points into unlabeled clusters", "Ignores outliers entirely"],
-      correct: 1,
-      note: "SVM finds the hyperplane that maximizes the margin, the distance to the closest points of each class (the support vectors)."
-    },
-    {
-      q: "Clustering, unlike classification, is typically:",
-      options: ["Supervised with labeled data", "Unsupervised, grouping data without predefined labels", "Only usable on numeric text data", "A search algorithm, not a learning method"],
-      correct: 1,
-      note: "Clustering methods like K-means group similar data points together without using labeled examples."
-    }
-  ],
-  "Python": [
-    {
-      q: "Which data type in Python is ordered but immutable?",
-      options: ["List", "Dictionary", "Tuple", "Set"],
-      correct: 2,
-      note: "Tuples preserve order like lists but cannot be modified after creation, unlike lists."
-    },
-    {
-      q: "What does NumPy primarily add to Python?",
-      options: ["Web scraping tools", "Efficient array operations and numerical computing", "Built-in GUI creation", "Automatic exception handling"],
-      correct: 1,
-      note: "NumPy provides fast, vectorized array operations that are far more efficient than plain Python lists for numerical work."
-    },
-    {
-      q: "In Python OOP, what does 'self' refer to inside a method?",
-      options: ["The class itself", "The specific instance calling the method", "A global variable", "The parent class"],
-      correct: 1,
-      note: "'self' is a reference to the particular object instance the method is being called on."
-    },
-    {
-      q: "Which keyword is used to catch an exception in Python?",
-      options: ["catch", "except", "rescue", "handle"],
-      correct: 1,
-      note: "Python uses try/except blocks, where 'except' catches the specified exception type."
-    },
-    {
-      q: "What's the main difference between a list and a dictionary in Python?",
-      options: ["Lists can't be modified, dictionaries can", "Dictionaries store key-value pairs, lists store ordered items by index", "Lists can only hold numbers", "Dictionaries are always faster"],
-      correct: 1,
-      note: "Dictionaries map keys to values for fast lookup, while lists store items in order accessed by index."
-    }
-  ],
-  "Mechanical Engineering": [
-    {
-      q: "Powder bed fusion is a process most associated with:",
-      options: ["Traditional casting", "Additive manufacturing (3D printing)", "Sheet metal stamping", "Injection molding"],
-      correct: 1,
-      note: "Powder bed fusion selectively fuses layers of powder using a heat source, making it a core additive manufacturing technique."
-    },
-    {
-      q: "In a hydraulic power steering system, what provides the assist force?",
-      options: ["An electric motor directly on the wheel", "Pressurized hydraulic fluid from a pump", "A second steering wheel", "Compressed air only"],
-      correct: 1,
-      note: "A belt-driven pump pressurizes hydraulic fluid, which assists the driver's steering input through a hydraulic cylinder."
-    },
-    {
-      q: "Gear trains are primarily used to:",
-      options: ["Store electrical energy", "Change speed, torque, or direction of rotational motion", "Convert AC to DC current", "Reduce vehicle weight"],
-      correct: 1,
-      note: "Gear trains transmit rotational motion between shafts while changing speed and torque according to the gear ratio."
-    },
-    {
-      q: "Compared to hydraulic power steering, electric power steering (EPS) generally offers:",
-      options: ["Lower fuel efficiency", "No steering assist at all", "Better energy efficiency since it only draws power when needed", "Assist only at high speeds"],
-      correct: 2,
-      note: "EPS uses an electric motor that only consumes power during steering input, unlike hydraulic pumps that run continuously off the engine."
-    },
-    {
-      q: "In a simple gear train, if a small gear drives a larger gear, the output:",
-      options: ["Speeds up and torque decreases", "Slows down and torque increases", "Speed and torque stay the same", "Direction reverses only, nothing else changes"],
-      correct: 1,
-      note: "A larger driven gear rotates slower than the smaller driving gear but produces more torque, since gear ratio trades speed for torque."
-    }
-  ]
-};
-
-let currentTopic = Object.keys(QUESTIONS)[0];
-let order = [];
-let idx = 0;
-let score = 0;
-let answered = false;
-
-function shuffle(arr) {
-  const a = arr.slice();
-  for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [a[i], a[j]] = [a[j], a[i]];
-  }
-  return a;
-}
-
-function renderTopics() {
-  const container = document.getElementById('topicSelect');
-  container.innerHTML = '';
-  Object.keys(QUESTIONS).forEach(topic => {
-    const btn = document.createElement('button');
-    btn.className = 'topic-btn' + (topic === currentTopic ? ' active' : '');
-    btn.textContent = topic;
-    btn.onclick = () => {
-      currentTopic = topic;
-      startQuiz();
-    };
-    container.appendChild(btn);
-  });
-}
-
-function startQuiz() {
-  order = shuffle(QUESTIONS[currentTopic].map((_, i) => i));
-  idx = 0;
-  score = 0;
-  renderTopics();
-  renderQuestion();
-}
-
-function renderQuestion() {
-  const card = document.getElementById('card');
-  answered = false;
-
-  if (idx >= order.length) {
-    card.innerHTML = `
-      <div class="done">
-        <h2>${score} / ${order.length}</h2>
-        <p class="subtitle">on ${currentTopic}</p>
-        <button class="restart-btn" onclick="startQuiz()">Try again</button>
-      </div>
-    `;
-    return;
-  }
-
-  const q = QUESTIONS[currentTopic][order[idx]];
-  card.innerHTML = `
-    <div class="progress">Question ${idx + 1} of ${order.length}</div>
-    <div class="prompt">${q.q}</div>
-    <div class="options" id="options"></div>
-    <div class="feedback" id="feedback"></div>
-    <div class="footer-row">
-      <span class="score">Score: ${score}</span>
-      <button class="next-btn" id="nextBtn" onclick="nextQuestion()">Next</button>
-    </div>
-  `;
-
-  const optionsEl = document.getElementById('options');
-  q.options.forEach((opt, i) => {
-    const btn = document.createElement('button');
-    btn.className = 'option';
-    btn.textContent = opt;
-    btn.onclick = () => selectAnswer(i, q);
-    optionsEl.appendChild(btn);
-  });
-}
-
-function selectAnswer(i, q) {
-  if (answered) return;
-  answered = true;
-  const buttons = document.querySelectorAll('.option');
-  buttons.forEach((b, bi) => {
-    b.disabled = true;
-    if (bi === q.correct) b.classList.add('correct');
-    else if (bi === i) b.classList.add('wrong');
-  });
-  if (i === q.correct) score++;
-  document.getElementById('feedback').textContent = q.note;
-  document.getElementById('nextBtn').classList.add('show');
-}
-
-function nextQuestion() {
-  idx++;
-  renderQuestion();
-}
-
-renderTopics();
-startQuiz();
-</script>
+<script src="script.js"></script>
 </body>
 </html>
