@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Calculator</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f0e6d2;
+    font-family: 'Segoe UI', Arial, sans-serif;
+  }
+  .calc {
+    background: #f5ecd9;
+    border-radius: 24px;
+    padding: 24px;
+    width: 320px;
+    box-shadow: 0 12px 30px rgba(93, 24, 33, 0.25);
+    border: 1px solid #d8c6a3;
+  }
+  .display {
+    background: #7a1f2b;
+    color: #f5ecd9;
+    border-radius: 16px;
+    padding: 20px 18px;
+    text-align: right;
+    margin-bottom: 18px;
+    min-height: 76px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    box-shadow: inset 0 2px 6px rgba(0,0,0,0.25);
+  }
+  .prev {
+    font-size: 14px;
+    opacity: 0.7;
+    min-height: 18px;
+    word-break: break-all;
+  }
+  .current {
+    font-size: 34px;
+    font-weight: 500;
+    word-break: break-all;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+  button {
+    border: none;
+    border-radius: 14px;
+    padding: 18px 0;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.08s ease, filter 0.15s ease;
+    background: #ecdcc0;
+    color: #5d1821;
+  }
+  button:active { transform: scale(0.94); }
+  button:hover { filter: brightness(0.96); }
+
+  .op {
+    background: #b3532f;
+    color: #f5ecd9;
+  }
+  .op:hover { filter: brightness(1.08); }
+
+  .equals {
+    background: #7a1f2b;
+    color: #f5ecd9;
+    grid-column: span 2;
+  }
+  .equals:hover { filter: brightness(1.1); }
+
+  .func {
+    background: #d8c6a3;
+    color: #5d1821;
+  }
+
+  .zero { grid-column: span 2; }
+</style>
+</head>
+<body>
+
+<div class="calc">
+  <div class="display">
+    <div class="prev" id="prev"></div>
+    <div class="current" id="current">0</div>
+  </div>
+  <div class="grid">
+    <button class="func" onclick="clearAll()">AC</button>
+    <button class="func" onclick="deleteLast()">DEL</button>
+    <button class="func" onclick="toggleSign()">&plusmn;</button>
+    <button class="op" onclick="chooseOp('div')">&divide;</button>
+
+    <button onclick="appendNum('7')">7</button>
+    <button onclick="appendNum('8')">8</button>
+    <button onclick="appendNum('9')">9</button>
+    <button class="op" onclick="chooseOp('mul')">&times;</button>
+
+    <button onclick="appendNum('4')">4</button>
+    <button onclick="appendNum('5')">5</button>
+    <button onclick="appendNum('6')">6</button>
+    <button class="op" onclick="chooseOp('sub')">&minus;</button>
+
+    <button onclick="appendNum('1')">1</button>
+    <button onclick="appendNum('2')">2</button>
+    <button onclick="appendNum('3')">3</button>
+    <button class="op" onclick="chooseOp('add')">+</button>
+
+    <button class="zero" onclick="appendNum('0')">0</button>
+    <button onclick="appendNum('.')">.</button>
+    <button class="equals" onclick="calculate()">=</button>
+  </div>
+</div>
+
+<script>
+var opSymbols = { add: '+', sub: '\u2212', mul: '\u00d7', div: '\u00f7' };
+let current = '0';
+let prev = '';
+let operator = null;
+let resetNext = false;
+
+const currentEl = document.getElementById('current');
+const prevEl = document.getElementById('prev');
+
+function updateDisplay() {
+  currentEl.textContent = current;
+  prevEl.textContent = prev;
+}
+
+function appendNum(n) {
+  if (resetNext) {
+    current = '0';
+    resetNext = false;
+  }
+  if (n === '.' && current.includes('.')) return;
+  if (current === '0' && n !== '.') {
+    current = n;
+  } else {
+    current += n;
+  }
+  updateDisplay();
+}
+
+function chooseOp(op) {
+  if (operator && !resetNext) {
+    calculate();
+  }
+  prev = current + ' ' + opSymbols[op];
+  operator = op;
+  resetNext = true;
+  updateDisplay();
+}
+
+function calculate() {
+  if (!operator) return;
+  const a = parseFloat(prev);
+  const b = parseFloat(current);
+  let result;
+  switch (operator) {
+    case 'add': result = a + b; break;
+    case 'sub': result = a - b; break;
+    case 'mul': result = a * b; break;
+    case 'div': result = b === 0 ? NaN : a / b; break;
+  }
+  result = Math.round(result * 1e10) / 1e10;
+  current = isNaN(result) ? 'Error' : result.toString();
+  prev = '';
+  operator = null;
+  resetNext = true;
+  updateDisplay();
+}
+
+function clearAll() {
+  current = '0';
+  prev = '';
+  operator = null;
+  resetNext = false;
+  updateDisplay();
+}
+
+function deleteLast() {
+  if (resetNext) return;
+  current = current.length > 1 ? current.slice(0, -1) : '0';
+  updateDisplay();
+}
+
+function toggleSign() {
+  if (current === '0') return;
+  current = current.startsWith('-') ? current.slice(1) : '-' + current;
+  updateDisplay();
+}
+</script>
+
+</body>
+</html>
