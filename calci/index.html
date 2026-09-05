@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Root Finder 🎀</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<span class="sparkle s1">✦</span>
+<span class="sparkle s2">♡</span>
+<span class="sparkle s3">✦</span>
+<span class="sparkle s4">✧</span>
+<span class="sparkle s5">♡</span>
+
+<div class="board">
+
+  <header class="board-header">
+    <div class="tape tape-left"></div>
+    <div class="tape tape-right"></div>
+    <p class="eyebrow">✨ numerical methods, cutified ✨</p>
+    <h1>Root Finder</h1>
+    <p class="subtitle">bisection &amp; newton-raphson calculator</p>
+  </header>
+
+  <nav class="pins" id="methodPins"></nav>
+
+  <main class="card">
+
+    <div class="field">
+      <label>f(x) =</label>
+      <input type="text" id="fx" value="x^3 - x - 2" spellcheck="false">
+    </div>
+
+    <div class="grid" id="paramGrid"></div>
+
+    <button class="solve-btn" id="solveBtn">Find root ✿</button>
+
+    <div class="result" id="result"></div>
+
+    <div class="table-wrap" id="tableWrap"></div>
+
+  </main>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.11.0/math.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
