@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leaf & Ladle — Meals of the Day</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="grain"></div>
+
+  <header class="navbar">
+    <a class="logo" href="#home">
+      <span class="logo-leaf">✦</span>
+      <span>leaf & ladle</span>
+    </a>
+    <nav>
+      <a href="#planner">Plan a meal</a>
+      <a href="#day">Today's table</a>
+    </nav>
+    <button class="mini-btn" onclick="scrollToPlanner()">Start planning <span>↗</span></button>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-copy">
+        <p class="eyebrow">YOUR LITTLE DAILY FOOD RITUAL</p>
+        <h1>Eat well,<br><em>one plate</em> at a time.</h1>
+        <p class="hero-text">
+          Tell us what you're craving, what you have, and how you want to feel.
+          We'll turn it into a delicious meal for your day.
+        </p>
+        <div class="hero-actions">
+          <button class="primary-btn" onclick="scrollToPlanner()">Build my meal <span>→</span></button>
+          <a class="text-link" href="#day">See today's table ↓</a>
+        </div>
+      </div>
+
+      <div class="hero-art">
+        <div class="sun"></div>
+        <div class="leaf leaf-1">❧</div>
+        <div class="leaf leaf-2">❧</div>
+        <div class="plate">
+          <div class="plate-inner">
+            <span class="food food-1"></span>
+            <span class="food food-2"></span>
+            <span class="food food-3"></span>
+            <span class="food food-4"></span>
+            <span class="food food-5"></span>
+            <span class="herb">✿</span>
+          </div>
+        </div>
+        <span class="art-label">fresh · simple · yours</span>
+      </div>
+    </section>
+
+    <section class="day-section" id="day">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">A WHOLE DAY OF GOODNESS</p>
+          <h2>Today's table</h2>
+        </div>
+        <span class="date-pill">04 meals · made with care</span>
+      </div>
+
+      <div class="meal-grid">
+        <article class="meal-card breakfast">
+          <div class="meal-top">
+            <span class="meal-number">01</span>
+            <span class="meal-time">07:30 · AM</span>
+          </div>
+          <div class="meal-icon">☼</div>
+          <p class="meal-type">BREAKFAST</p>
+          <h3>Green Garden Toast</h3>
+          <p>Avocado, herby cottage cheese, cucumber & a lemony crunch.</p>
+          <button onclick="openRecipe('breakfast')">View recipe <span>↗</span></button>
+        </article>
+
+        <article class="meal-card brunch">
+          <div class="meal-top">
+            <span class="meal-number">02</span>
+            <span class="meal-time">10:30 · AM</span>
+          </div>
+          <div class="meal-icon">◒</div>
+          <p class="meal-type">BRUNCH</p>
+          <h3>Olive Herb Shakshuka</h3>
+          <p>Eggs nestled in a rich tomato-pepper sauce with herbs & olives.</p>
+          <button onclick="openRecipe('brunch')">View recipe <span>↗</span></button>
+        </article>
+
+        <article class="meal-card lunch">
+          <div class="meal-top">
+            <span class="meal-number">03</span>
+            <span class="meal-time">01:30 · PM</span>
+          </div>
+          <div class="meal-icon">❋</div>
+          <p class="meal-type">LUNCH</p>
+          <h3>Golden Green Bowl</h3>
+          <p>Roasted vegetables, chickpeas, rice & a creamy tahini-lime drizzle.</p>
+          <button onclick="openRecipe('lunch')">View recipe <span>↗</span></button>
+        </article>
+
+        <article class="meal-card dinner">
+          <div class="meal-top">
+            <span class="meal-number">04</span>
+            <span class="meal-time">07:30 · PM</span>
+          </div>
+          <div class="meal-icon">☾</div>
+          <p class="meal-type">DINNER</p>
+          <h3>Creamy Pesto Pasta</h3>
+          <p>Silky basil pesto pasta with spinach, peas & parmesan.</p>
+          <button onclick="openRecipe('dinner')">View recipe <span>↗</span></button>
+        </article>
+      </div>
+    </section>
+
+    <section class="planner-section" id="planner">
+      <div class="planner-intro">
+        <p class="eyebrow">THE LITTLE MEAL MATCHMAKER</p>
+        <h2>What's your plate<br>feeling today?</h2>
+        <p>Pick your meal, choose your mood and we'll cook up a match.</p>
+      </div>
+
+      <div class="planner">
+        <div class="progress">
+          <span class="progress-dot active"></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <div class="question active-question" data-step="1">
+          <p class="step-label">01 / 04</p>
+          <h3>Which meal are we making?</h3>
+          <div class="options meal-options">
+            <button data-value="breakfast">☀️ <b>Breakfast</b><small>start bright</small></button>
+            <button data-value="brunch">🍳 <b>Brunch</b><small>slow & cosy</small></button>
+            <button data-value="lunch">🥗 <b>Lunch</b><small>fresh & filling</small></button>
+            <button data-value="dinner">🌙 <b>Dinner</b><small>comfort time</small></button>
+          </div>
+        </div>
+
+        <div class="question" data-step="2">
+          <p class="step-label">02 / 04</p>
+          <h3>What veggies sound good?</h3>
+          <div class="options chip-options">
+            <button data-value="leafy">🥬 Leafy greens</button>
+            <button data-value="roasted">🥕 Roasty & earthy</button>
+            <button data-value="crunchy">🥒 Fresh & crunchy</button>
+            <button data-value="mixed">🌱 A little of everything</button>
+          </div>
+        </div>
+
+        <div class="question" data-step="3">
+          <p class="step-label">03 / 04</p>
+          <h3>What kind of taste?</h3>
+          <div class="options chip-options">
+            <button data-value="creamy">♡ Creamy & cosy</button>
+            <button data-value="fresh">✿ Fresh & zesty</button>
+            <button data-value="spicy">♨ A little spicy</button>
+            <button data-value="savory">✦ Rich & savoury</button>
+          </div>
+        </div>
+
+        <div class="question" data-step="4">
+          <p class="step-label">04 / 04</p>
+          <h3>How do you want it to feel?</h3>
+          <div class="options chip-options">
+            <button data-value="healthy">🌿 Nourishing</button>
+            <button data-value="comfort">🫶 Comforting</button>
+            <button data-value="quick">⚡ Quick & easy</button>
+            <button data-value="balanced">☁ Balanced</button>
+          </div>
+        </div>
+
+        <div class="planner-nav">
+          <button class="back-btn" onclick="previousStep()">← Back</button>
+          <span class="step-counter">1 of 4</span>
+          <button class="next-btn" onclick="nextStep()">Next →</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="result-section hidden" id="result">
+      <div class="result-card">
+        <div class="result-stamp">YOUR MATCH ✦</div>
+        <p class="eyebrow">THE KITCHEN HAS SPOKEN</p>
+        <h2 id="resultTitle">Your perfect plate</h2>
+        <p id="resultDescription"></p>
+        <div class="result-meta">
+          <span id="resultTime">⏱ 25 min</span>
+          <span id="resultTag">🌿 nourishing</span>
+          <span>♡ beginner-friendly</span>
+        </div>
+        <button class="primary-btn" id="recipeButton">Show me the recipe <span>↗</span></button>
+        <button class="restart-btn" onclick="restartPlanner()">Start over</button>
+      </div>
+    </section>
+  </main>
+
+  <div class="recipe-modal hidden" id="recipeModal">
+    <div class="modal-backdrop" onclick="closeRecipe()"></div>
+    <div class="recipe-window">
+      <button class="close-btn" onclick="closeRecipe()">×</button>
+      <div class="recipe-heading">
+        <p class="eyebrow" id="recipeMealType">RECIPE</p>
+        <h2 id="recipeTitle">Recipe title</h2>
+        <p id="recipeIntro"></p>
+        <div class="recipe-stats">
+          <span id="recipeTime">⏱ 25 min</span>
+          <span id="recipeServes">◉ 2 servings</span>
+          <span>♡ easy</span>
+        </div>
+      </div>
+
+      <div class="recipe-content">
+        <div>
+          <h3>What you'll need</h3>
+          <ul id="ingredients"></ul>
+        </div>
+        <div>
+          <h3>Let's make it</h3>
+          <ol id="steps"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-logo">leaf & ladle ✦</div>
+    <p>good food doesn't have to be complicated.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
