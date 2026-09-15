@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Petrichor House — A cafe for grey afternoons</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  @import url('style.css');
+</style>
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="nav-inner">
+    <a href="#top" class="nav-mark">Petrichor <em>House</em></a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#story">Our Room</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#booking">Book a Table</a></li>
+        <li><a href="#features">Beyond the Cup</a></li>
+      </ul>
+    </nav>
+    <a href="#booking" class="nav-cta">Reserve</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero" style="padding: 0;">
+    <div class="hero-copy">
+      <span class="hero-eyebrow">Open through the rain, every day</span>
+      <h1>Slow coffee<br><span class="line2">for grey afternoons.</span></h1>
+      <p class="hero-sub">Petrichor House sits at the end of a wet lane, where the windows fog and the coffee stays hot longer than it should. Come in from the weather and stay a while.</p>
+      <div class="hero-actions">
+        <a href="#booking" class="btn btn-primary">Reserve a table</a>
+        <a href="#menu" class="btn btn-ghost">See the menu</a>
+      </div>
+      <div class="hero-hours"><span class="dot"></span> Open now — pours until 11pm</div>
+    </div>
+    <div class="hero-window">
+      <div class="fog"></div>
+      <div class="lamp-glow"></div>
+      <div class="rain-field" id="heroRain"></div>
+      <div class="window-mullion"></div>
+      <p class="hero-caption">The corner table, seat 4 — best view of the storm drains on Cardamom Lane.</p>
+    </div>
+  </section>
+
+  <!-- STORY -->
+  <section id="story">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <span class="section-tag">The room</span>
+          <h2>Built for waiting out weather.</h2>
+        </div>
+        <p>Low light, deep chairs, and coffee poured slow enough to justify staying past your first cup.</p>
+      </div>
+      <div class="story">
+        <div class="story-figure">
+          <div class="rain-field"></div>
+        </div>
+        <div class="story-text">
+          <p>Petrichor House opened in a converted print shop, and we kept the things that made it feel lived-in: the water-stained ceiling beams, the brass fittings gone soft with age, the single skylight that turns any storm into a drumline. <strong>Most nights, someone is reading by the window with a coat still dripping on the hook behind them.</strong></p>
+          <p>We roast in small batches, cut pastries in the morning before the first tram runs, and keep the lights low enough that six in the evening and eleven at night look much the same from your table. If you've come to get out of the rain, we'd rather you didn't rush back into it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENU -->
+  <section id="menu">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <span class="section-tag">On the counter</span>
+          <h2>A short, honest menu.</h2>
+        </div>
+        <p>Everything is made to order — the wait is part of the point.</p>
+      </div>
+      <div class="menu-grid">
+        <div class="menu-col">
+          <h3>Coffee &amp; Cocoa</h3>
+          <span class="col-note">Beans turned weekly, roasted two lanes over.</span>
+
+          <div class="menu-item"><span class="name">Petrichor Pour</span><span class="leader"></span><span class="price">₹220</span></div>
+          <div class="menu-item wrap-desc"><span class="name">Storm Cloud Cortado</span><span class="leader"></span><span class="price">₹240</span><span class="desc">Double ristretto, steamed milk, poured thin</span></div>
+          <div class="menu-item"><span class="name">Copper Kettle Filter</span><span class="leader"></span><span class="price">₹190</span></div>
+          <div class="menu-item wrap-desc"><span class="name">Dark Window Mocha</span><span class="leader"></span><span class="price">₹260</span><span class="desc">70% cocoa, no sugar unless you ask</span></div>
+          <div class="menu-item"><span class="name">Smoked Cardamom Latte</span><span class="leader"></span><span class="price">₹250</span></div>
+          <div class="menu-item"><span class="name">Iron Roast, black</span><span class="leader"></span><span class="price">₹170</span></div>
+        </div>
+        <div class="menu-col">
+          <h3>Something Warm</h3>
+          <span class="col-note">Baked in the back kitchen, gone by evening.</span>
+
+          <div class="menu-item wrap-desc"><span class="name">Brown Butter Croissant</span><span class="leader"></span><span class="price">₹150</span><span class="desc">Laminated over three days</span></div>
+          <div class="menu-item"><span class="name">Rye &amp; Honey Toast</span><span class="leader"></span><span class="price">₹180</span></div>
+          <div class="menu-item"><span class="name">Mushroom &amp; Thyme Tart</span><span class="leader"></span><span class="price">₹290</span></div>
+          <div class="menu-item wrap-desc"><span class="name">Spiced Pear Loaf</span><span class="leader"></span><span class="price">₹160</span><span class="desc">Seasonal, until the pears run out</span></div>
+          <div class="menu-item"><span class="name">Bitter Chocolate Tart</span><span class="leader"></span><span class="price">₹210</span></div>
+          <div class="menu-item"><span class="name">Soup of the Evening</span><span class="leader"></span><span class="price">₹230</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKING -->
+  <section id="booking" class="booking">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <span class="section-tag">Seating</span>
+          <h2>Book a table.</h2>
+        </div>
+        <p>Pick a spot on the floor, then hold it with your details.</p>
+      </div>
+
+      <div class="booking-grid">
+        <div class="floor">
+          <span class="floor-label">Tap a seat to select it</span>
+          <div class="floor-plan" id="floorPlan">
+            <button type="button" class="seat window" style="grid-column:1" data-name="Window Seat 1">Window 1</button>
+            <button type="button" class="seat window" style="grid-column:2" data-name="Window Seat 2">Window 2</button>
+            <button type="button" class="seat window" style="grid-column:3" data-name="Window Seat 3">Window 3</button>
+            <button type="button" class="seat window" style="grid-column:4" data-name="Window Seat 4">Window 4</button>
+            <button type="button" class="seat bar" style="grid-row:2" data-name="Bar Stool 1">Bar 1</button>
+            <button type="button" class="seat bar" style="grid-row:3" data-name="Bar Stool 2">Bar 2</button>
+            <button type="button" class="seat bar" style="grid-row:4" data-name="Bar Stool 3">Bar 3</button>
+            <button type="button" class="seat bar" style="grid-row:5" data-name="Bar Stool 4">Bar 4</button>
+            <button type="button" class="seat communal" data-name="Communal Table">Communal Table<br>(seats up to 6)</button>
+            <button type="button" class="seat booth" style="grid-row:2 / 4" data-name="Reading Booth A">Booth A</button>
+            <button type="button" class="seat booth" style="grid-row:4 / 6" data-name="Reading Booth B">Booth B</button>
+          </div>
+          <div class="floor-key">
+            <span><i></i> Available</span>
+            <span><i class="on"></i> Selected</span>
+          </div>
+        </div>
+
+        <div>
+          <form class="booking-form" id="bookingForm">
+            <div class="field-row">
+              <div>
+                <label for="date">Date</label>
+                <input type="date" id="date" required>
+              </div>
+              <div>
+                <label for="time">Time</label>
+                <select id="time" required>
+                  <option value="">Choose a time</option>
+                  <option>5:00 PM</option>
+                  <option>6:00 PM</option>
+                  <option>7:00 PM</option>
+                  <option>8:00 PM</option>
+                  <option>9:00 PM</option>
+                </select>
+              </div>
+            </div>
+            <div class="field-row">
+              <div>
+                <label for="party">Party size</label>
+                <select id="party" required>
+                  <option value="">Number of guests</option>
+                  <option>1 guest</option>
+                  <option>2 guests</option>
+                  <option>3 guests</option>
+                  <option>4 guests</option>
+                  <option>5–6 guests</option>
+                </select>
+              </div>
+              <div>
+                <label for="name">Name</label>
+                <input type="text" id="name" placeholder="Your name" required>
+              </div>
+            </div>
+            <div>
+              <label for="phone">Phone number</label>
+              <input type="tel" id="phone" placeholder="For a reminder text" required>
+            </div>
+            <p class="selection-note" id="selectionNote">No seat selected yet.</p>
+            <button type="submit" class="btn btn-primary">Confirm reservation</button>
+          </form>
+
+          <div class="confirm" id="confirmBox">
+            <h4>Table held.</h4>
+            <p id="confirmText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section id="features">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <span class="section-tag">Beyond the cup</span>
+          <h2>A few other reasons to stay.</h2>
+        </div>
+        <p>Small things we do that a coffee shop doesn't have to.</p>
+      </div>
+
+      <div class="features">
+        <div class="feature">
+          <span class="num">Rainy Day Blend</span>
+          <h3>Free refill when it's actually pouring outside.</h3>
+          <p>Check the weather at the counter — if it's raining when you order, your second Petrichor Pour is on us. We built the whole place around the idea; we might as well honour it.</p>
+          <a href="#" class="feature-link">How it works</a>
+        </div>
+        <div class="feature">
+          <span class="num">The Reading Booths</span>
+          <h3>Rent a booth for the afternoon.</h3>
+          <p>Booths A and B can be held for up to four hours with a standing order — good for studying, slow meetings, or long books.</p>
+          <a href="#booking" class="feature-link">Reserve a booth</a>
+        </div>
+        <div class="feature">
+          <span class="num">Ledger Cards</span>
+          <h3>A tab, not a loyalty app.</h3>
+          <p>Ask for a ledger card at the till. Every visit gets a stamp in ink; your eleventh cup is written off the page for free.</p>
+          <a href="#" class="feature-link">Ask at the counter</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h4>Visit</h4>
+        <address>
+          14 Cardamom Lane<br>
+          off the old print quarter<br>
+          Open daily, 8am – 11pm
+        </address>
+      </div>
+      <div>
+        <h4>Today's hours</h4>
+        <ul class="ledger">
+          <li><span>Mon – Thu</span><span>8am – 10pm</span></li>
+          <li><span>Fri – Sat</span><span>8am – 11:30pm</span></li>
+          <li><span>Sunday</span><span>9am – 9pm</span></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Elsewhere</h4>
+        <ul class="footer-links">
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Private events</a></li>
+          <li><a href="#">Gift cards</a></li>
+          <li><a href="#">Work with us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; Petrichor House. Best visited in bad weather.</span>
+      <button class="rain-toggle" id="rainToggle" aria-pressed="true">
+        <span class="led"></span> Rain sound: on
+      </button>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Populate rain drops
+  function seedRain(container, count){
+    if(!container) return;
+    const frag = document.createDocumentFragment();
+    for(let i = 0; i < count; i++){
+      const d = document.createElement('div');
+      d.className = 'drop';
+      const left = Math.random() * 100;
+      const duration = 0.6 + Math.random() * 0.9;
+      const delay = Math.random() * 2;
+      const height = 40 + Math.random() * 90;
+      const opacity = 0.25 + Math.random() * 0.5;
+      d.style.left = left + '%';
+      d.style.height = height + 'px';
+      d.style.animationDuration = duration + 's';
+      d.style.animationDelay = delay + 's';
+      d.style.opacity = opacity;
+      frag.appendChild(d);
+    }
+    container.appendChild(frag);
+  }
+  seedRain(document.getElementById('heroRain'), 70);
+  document.querySelectorAll('.story-figure .rain-field').forEach(el => seedRain(el, 35));
+
+  // Seat selection
+  let selectedSeat = null;
+  const seats = document.querySelectorAll('.seat');
+  const note = document.getElementById('selectionNote');
+  seats.forEach(seat => {
+    seat.addEventListener('click', () => {
+      seats.forEach(s => s.classList.remove('selected'));
+      seat.classList.add('selected');
+      selectedSeat = seat.dataset.name;
+      note.textContent = 'Selected: ' + selectedSeat;
+    });
+  });
+
+  // Booking form
+  const form = document.getElementById('bookingForm');
+  const confirmBox = document.getElementById('confirmBox');
+  const confirmText = document.getElementById('confirmText');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if(!selectedSeat){
+      note.textContent = 'Choose a seat on the floor plan before confirming.';
+      note.style.color = '#d98a6f';
+      return;
+    }
+    const date = document.getElementById('date').value || 'a date to be confirmed';
+    const time = document.getElementById('time').value || 'a time to be confirmed';
+    const party = document.getElementById('party').value || 'your party';
+    const name = document.getElementById('name').value || 'you';
+    confirmText.textContent = `${name}, ${selectedSeat} is held for ${party} on ${date} at ${time}. We'll text a reminder before you head out into the rain.`;
+    confirmBox.classList.add('show');
+    confirmBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  });
+
+  // Rain sound toggle (visual state only — no audio asset bundled)
+  const rainToggle = document.getElementById('rainToggle');
+  let rainOn = true;
+  rainToggle.addEventListener('click', () => {
+    rainOn = !rainOn;
+    rainToggle.setAttribute('aria-pressed', String(rainOn));
+    rainToggle.innerHTML = `<span class="led" style="background:${rainOn ? 'var(--copper-bright)' : 'var(--ink-faint)'}"></span> Rain sound: ${rainOn ? 'on' : 'off'}`;
+    document.querySelectorAll('.rain-field').forEach(el => {
+      el.style.opacity = rainOn ? '1' : '0';
+      el.style.transition = 'opacity 0.6s ease';
+    });
+  });
+</script>
+
+</body>
+</html>
