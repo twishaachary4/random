@@ -1,0 +1,154 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>READR — Find Your Next Read</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Background decorations -->
+    <div class="orb orb1"></div>
+    <div class="orb orb2"></div>
+
+    <header>
+        <div class="logo">READ<span>R</span></div>
+        <p class="tagline">Your next obsession is one question away.</p>
+    </header>
+
+    <main>
+
+        <!-- INTRO SCREEN -->
+        <section id="intro" class="screen active">
+
+            <div class="book-icon">📖</div>
+
+            <p class="eyebrow">THE ULTIMATE READING QUIZ</p>
+
+            <h1>
+                What are you<br>
+                <span>in the mood</span> to read?
+            </h1>
+
+            <p class="intro-text">
+                Answer a few questions and we'll find a book
+                that matches your current vibe.
+            </p>
+
+            <button id="startBtn" class="main-btn">
+                Find My Book →
+            </button>
+
+            <div class="mini-stats">
+                <div>
+                    <strong>8</strong>
+                    <small>Questions</small>
+                </div>
+
+                <div>
+                    <strong>∞</strong>
+                    <small>Possibilities</small>
+                </div>
+
+                <div>
+                    <strong>1</strong>
+                    <small>Perfect Read</small>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- QUIZ SCREEN -->
+        <section id="quiz" class="screen">
+
+            <div class="quiz-top">
+
+                <span id="questionNumber">01 / 08</span>
+
+                <div class="progress-container">
+                    <div id="progress"></div>
+                </div>
+
+            </div>
+
+            <div class="question-card">
+
+                <p id="questionCategory" class="eyebrow">
+                    YOUR VIBE
+                </p>
+
+                <h2 id="question">
+                    What kind of reading experience are you craving?
+                </h2>
+
+                <div id="answers" class="answers"></div>
+
+            </div>
+
+            <p class="hint">Choose the answer that feels most like you ✦</p>
+
+        </section>
+
+
+        <!-- RESULT SCREEN -->
+        <section id="result" class="screen">
+
+            <p class="eyebrow">YOUR MATCH</p>
+
+            <h1>Your next read is...</h1>
+
+            <div class="book-result">
+
+                <div class="book-cover" id="bookCover">
+                    <div class="cover-inner">
+                        <span id="coverGenre">FICTION</span>
+                        <h3 id="coverTitle">The Silent Patient</h3>
+                        <small id="coverAuthor">Alex Michaelides</small>
+                    </div>
+                </div>
+
+                <div class="book-info">
+
+                    <div class="match">
+                        <span id="matchPercent">98%</span>
+                        MATCH
+                    </div>
+
+                    <h2 id="bookTitle">The Silent Patient</h2>
+
+                    <p id="bookAuthor">by Alex Michaelides</p>
+
+                    <div id="bookTags" class="tags"></div>
+
+                    <p id="bookDescription" class="description">
+                        A psychological mystery filled with secrets,
+                        obsession and unexpected twists.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <button id="restartBtn" class="main-btn">
+                ↻ Take Quiz Again
+            </button>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <span>READR</span> · Made for people who never know what to read next.
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+
