@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Pick Me a Movie 🎀</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- floating decorative blobs -->
+  <div class="blob blob--rose" aria-hidden="true"></div>
+  <div class="blob blob--sage" aria-hidden="true"></div>
+  <div class="blob blob--lavender" aria-hidden="true"></div>
+  <div class="sparkle sparkle--1" aria-hidden="true">✦</div>
+  <div class="sparkle sparkle--2" aria-hidden="true">✧</div>
+  <div class="sparkle sparkle--3" aria-hidden="true">✦</div>
+
+  <main class="stage">
+
+    <header class="masthead">
+      <p class="eyebrow-emoji">🍿 🎬 🍿</p>
+      <h1>Pick Me a Movie</h1>
+      <p class="subhead">Answer a few cozy little questions and I'll find your next watch.</p>
+    </header>
+
+    <section class="card" id="quiz-card">
+
+      <!-- progress dots -->
+      <div class="progress" id="progress" role="progressbar" aria-valuemin="1" aria-valuemax="5" aria-valuenow="1"></div>
+
+      <!-- START PANEL -->
+      <div class="panel panel--start" id="panel-start" data-panel>
+        <div class="start-visual" aria-hidden="true">🎞️</div>
+        <h2>Ready when you are</h2>
+        <p>Five quick questions, one perfect pick. No spoilers, promise.</p>
+        <button class="btn btn--primary" id="start-btn" type="button">Let's begin ✨</button>
+      </div>
+
+      <!-- QUESTION PANEL (template driven, filled by JS) -->
+      <div class="panel panel--question" id="panel-question" data-panel hidden>
+        <p class="q-count" id="q-count"></p>
+        <h2 id="q-title"></h2>
+        <div class="options" id="q-options"></div>
+        <button class="btn btn--ghost" id="back-btn" type="button">← back</button>
+      </div>
+
+      <!-- LOADING PANEL -->
+      <div class="panel panel--loading" id="panel-loading" data-panel hidden>
+        <div class="loading-reel" aria-hidden="true">🎬</div>
+        <p id="loading-text">Consulting the popcorn oracle…</p>
+      </div>
+
+      <!-- RESULT PANEL -->
+      <div class="panel panel--result" id="panel-result" data-panel hidden>
+        <p class="result-eyebrow">Tonight, you're watching</p>
+        <div class="result-poster" id="result-emoji" aria-hidden="true"></div>
+        <h2 id="result-title"></h2>
+        <p class="result-meta" id="result-meta"></p>
+        <p class="result-blurb" id="result-blurb"></p>
+        <div class="result-tags" id="result-tags"></div>
+        <div class="result-actions">
+          <button class="btn btn--primary" id="restart-btn" type="button">Find another 🔁</button>
+        </div>
+      </div>
+
+    </section>
+
+    <footer class="foot-note">
+      <p>made with 🩷 for indecisive movie nights</p>
+    </footer>
+
+  </main>
+
+<script src="script.js"></script>
+</body>
+</html>
