@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Twisha — Resume</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ============ NAV ============ -->
+  <nav class="topnav" id="topnav">
+    <span class="topnav__mark">TR</span>
+    <ul class="topnav__links">
+      <li><a href="#about" class="nav-link is-active" data-nav>About</a></li>
+      <li><a href="#education" class="nav-link" data-nav>Education</a></li>
+      <li><a href="#projects" class="nav-link" data-nav>Projects</a></li>
+      <li><a href="#skills" class="nav-link" data-nav>Skills</a></li>
+    </ul>
+  </nav>
+
+  <!-- ============ HEADER ============ -->
+  <header class="hero" id="about">
+    <div class="hero__inner">
+      <p class="hero__eyebrow">Portfolio · Résumé</p>
+      <h1 class="hero__name">Twisha</h1>
+      <p class="hero__title">First-Year Engineering Student — Computer Science</p>
+      <p class="hero__summary">
+        Studying a combined Computer Science at Canara Engineering College, Mangaluru. Building things at the intersection of
+        code and hardware — from hospital queue systems to material science experiments —
+        and writing clean technical documentation along the way.
+      </p>
+      <ul class="hero__meta">
+        <li>📍 Mangaluru, Karnataka</li>
+        <li>🎓 Canara Engineering College (VTU)</li>
+        <li>✉️ your.email@example.com</li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============ EDUCATION ============ -->
+    <section class="section" id="education">
+      <div class="section__head">
+        <span class="section__index">01</span>
+        <h2 class="section__title">Education</h2>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline__line" aria-hidden="true"></div>
+
+        <article class="timeline__item">
+          <div class="timeline__dot" aria-hidden="true"></div>
+          <div class="timeline__card">
+            <p class="timeline__date">Ongoing</p>
+            <h3 class="timeline__title">B.E. — Computer Science</h3>
+            <p class="timeline__place">Canara Engineering College, Mangaluru · VTU-affiliated</p>
+            <p class="timeline__desc">
+              A combined program spanning both disciplines — engineering mathematics,
+              Python programming, AI &amp; Applications, and Introduction to Mechanical
+              Engineering, alongside communication and technical writing coursework.
+            </p>
+            <ul class="timeline__tags">
+              <li>Engineering Mathematics</li>
+              <li>AI &amp; Applications</li>
+              <li>Python</li>
+              <li>Java</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <section class="section section--tinted" id="projects">
+      <div class="section__head">
+        <span class="section__index">02</span>
+        <h2 class="section__title">Projects</h2>
+      </div>
+
+      <div class="projects">
+
+        <article class="project-card project-card--featured">
+          <div class="project-card__top">
+            <span class="project-card__tag">Hackathon</span>
+          </div>
+          <h3 class="project-card__title">MediPass</h3>
+          <p class="project-card__role">Hardware–Software Hospital Queue Management System</p>
+          <p class="project-card__desc">
+            A queue management system for hospitals combining embedded hardware with a
+            live web dashboard, built to cut down patient wait-time confusion. Designed
+            and built as a primary hackathon project.
+          </p>
+          <ul class="project-card__stack">
+            <li>ESP32</li>
+            <li>Firebase</li>
+            <li>React</li>
+          </ul>
+        </article>
+
+        <article class="project-card">
+          <div class="project-card__top">
+            <span class="project-card__tag">Group Project · 6 members</span>
+          </div>
+          <h3 class="project-card__title">Thermocol-to-Adhesive Conversion</h3>
+          <p class="project-card__role">Chemical Process &amp; Material Procurement Lead</p>
+          <p class="project-card__desc">
+            Led material sourcing and chemical process decisions for a team project
+            converting waste thermocol into usable adhesive, drawing on electrochemical
+            cell theory and solvent comparison (acetone vs. toluene).
+          </p>
+          <ul class="project-card__stack">
+            <li>Materials Science</li>
+            <li>Process Chemistry</li>
+            <li>Team Leadership</li>
+          </ul>
+        </article>
+
+        <article class="project-card">
+          <div class="project-card__top">
+            <span class="project-card__tag">Technical Writing</span>
+          </div>
+          <h3 class="project-card__title">Stainless Steel Corrosion Report</h3>
+          <p class="project-card__role">Independent Technical Report</p>
+          <p class="project-card__desc">
+            Researched and authored a technical report on stainless steel corrosion in
+            semiconductor manufacturing and general use, with embedded diagrams and
+            flowcharts, delivered in both HTML and Word formats.
+          </p>
+          <ul class="project-card__stack">
+            <li>Technical Writing</li>
+            <li>HTML</li>
+            <li>Diagramming</li>
+          </ul>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ============ SKILLS ============ -->
+    <section class="section" id="skills">
+      <div class="section__head">
+        <span class="section__index">03</span>
+        <h2 class="section__title">Skills</h2>
+      </div>
+
+      <div class="skills">
+
+        <div class="skills__group">
+          <h3 class="skills__group-title">Programming</h3>
+
+          <div class="skillbar" data-level="78">
+            <div class="skillbar__top"><span>Python</span><span class="skillbar__pct">78%</span></div>
+            <div class="skillbar__track"><div class="skillbar__fill"></div></div>
+          </div>
+
+          <div class="skillbar" data-level="60">
+            <div class="skillbar__top"><span>HTML &amp; CSS</span><span class="skillbar__pct">60%</span></div>
+            <div class="skillbar__track"><div class="skillbar__fill"></div></div>
+          </div>
+
+          <div class="skillbar" data-level="55">
+            <div class="skillbar__top"><span>NumPy &amp; OOP</span><span class="skillbar__pct">55%</span></div>
+            <div class="skillbar__track"><div class="skillbar__fill"></div></div>
+          </div>
+        </div>
+
+        <div class="skills__group">
+          <h3 class="skills__group-title">Engineering &amp; Analysis</h3>
+
+          <div class="skillbar" data-level="65">
+            <div class="skillbar__top"><span>Numerical Methods</span><span class="skillbar__pct">65%</span></div>
+            <div class="skillbar__track"><div class="skillbar__fill"></div></div>
+          </div>
+
+          <div class="skillbar" data-level="50">
+            <div class="skillbar__top"><span>ML &amp; AI Concepts</span><span class="skillbar__pct">50%</span></div>
+            <div class="skillbar__track"><div class="skillbar__fill"></div></div>
+          </div>
+
+          <div class="skillbar" data-level="55">
+            <div class="skillbar__top"><span>Mechanical Fundamentals</span><span class="skillbar__pct">55%</span></div>
+            <div class="skillbar__track"><div class="skillbar__fill"></div></div>
+          </div>
+        </div>
+
+        <div class="skills__group">
+          <h3 class="skills__group-title">Applied &amp; Soft Skills</h3>
+
+          <div class="skillbar" data-level="70">
+            <div class="skillbar__top"><span>Technical Writing</span><span class="skillbar__pct">70%</span></div>
+            <div class="skillbar__track"><div class="skillbar__fill"></div></div>
+          </div>
+
+          <div class="skillbar" data-level="68">
+            <div class="skillbar__top"><span>Process &amp; Materials Planning</span><span class="skillbar__pct">68%</span></div>
+            <div class="skillbar__track"><div class="skillbar__fill"></div></div>
+          </div>
+
+          <div class="skillbar" data-level="62">
+            <div class="skillbar__top"><span>Team Leadership</span><span class="skillbar__pct">62%</span></div>
+            <div class="skillbar__track"><div class="skillbar__fill"></div></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="foot">
+    <p>Twisha — Computer Science &amp; Mechanical Engineering, CEC Mangaluru</p>
+  </footer>
+
+<script src="script.js"></script>
+</body>
+</html>
