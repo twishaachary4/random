@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meridian — Watches made to be kept</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header" id="top">
+    <div class="wrap header-inner">
+      <a class="wordmark" href="#top">Meridian</a>
+      <nav class="nav" id="nav">
+        <a href="#philosophy">Philosophy</a>
+        <a href="#collection">Collection</a>
+        <a href="#craft">Craft</a>
+        <a href="#waitlist" class="nav-cta">Join the waitlist</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="kicker">A small-batch watch, built to outlast the trend it was bought to avoid</p>
+          <h1 class="reveal">Time,<br>considered.</h1>
+          <p class="hero-lede reveal">Meridian is a single watch, refined once a year instead of replaced every season. Forty-one hours of reserve, a case machined from one block of titanium, and nothing on the dial that doesn't tell you the time.</p>
+          <div class="hero-actions reveal">
+            <a href="#waitlist" class="btn btn-primary">Join the waitlist</a>
+            <a href="#craft" class="btn btn-ghost">See how it's made</a>
+          </div>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <svg class="watch-svg" viewBox="0 0 420 420" id="watchSvg">
+            <circle class="w-case" cx="210" cy="210" r="150"></circle>
+            <circle class="w-bezel" cx="210" cy="210" r="150"></circle>
+            <circle class="w-face" cx="210" cy="210" r="128"></circle>
+            <g class="w-ticks" id="ticks"></g>
+            <line class="w-hand w-hour" x1="210" y1="210" x2="210" y2="130"></line>
+            <line class="w-hand w-min" x1="210" y1="210" x2="260" y2="120"></line>
+            <line class="w-hand w-sec" x1="210" y1="230" x2="210" y2="105"></line>
+            <circle class="w-pin" cx="210" cy="210" r="4"></circle>
+            <text class="w-word" x="210" y="175" text-anchor="middle">MERIDIAN</text>
+            <text class="w-sub" x="210" y="255" text-anchor="middle">AUTOMATIC</text>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <section class="philosophy" id="philosophy">
+      <div class="wrap philosophy-grid">
+        <h2>Most watch brands sell you a new one every year.<br>We'd rather you never needed one.</h2>
+        <div class="philosophy-points">
+          <div class="point">
+            <p class="point-title">One model, no seasons</p>
+            <p>No spring drop, no holiday colourway. We change the watch when the watch is wrong, not when the calendar says to.</p>
+          </div>
+          <div class="point">
+            <p class="point-title">Parts you can still get in 2050</p>
+            <p>The movement is Swiss-made and in continuous production. Any watchmaker will be able to service it long after we've stopped answering email.</p>
+          </div>
+          <div class="point">
+            <p class="point-title">Priced like a tool, not a trophy</p>
+            <p>No celebrity campaign, no boutique lease to cover. The saving goes into the case, the crystal, and the movement.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="collection" id="collection">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>The collection</h2>
+          <p>One case, three faces. Each built to the same standard, finished for a different hour of the day.</p>
+        </div>
+        <div class="collection-grid">
+          <article class="piece">
+            <div class="piece-face piece-slate" aria-hidden="true">
+              <div class="mini-dial"></div>
+            </div>
+            <h3>Meridian Slate</h3>
+            <p>A charcoal dial with a brushed steel case. The one you wear when you forget you're wearing a watch.</p>
+            <p class="piece-price">$1,180</p>
+          </article>
+          <article class="piece">
+            <div class="piece-face piece-ivory" aria-hidden="true">
+              <div class="mini-dial"></div>
+            </div>
+            <h3>Meridian Ivory</h3>
+            <p>A warm bone-white face with a sand-cast texture, catching light differently through the day.</p>
+            <p class="piece-price">$1,180</p>
+          </article>
+          <article class="piece">
+            <div class="piece-face piece-forest" aria-hidden="true">
+              <div class="mini-dial"></div>
+            </div>
+            <h3>Meridian Forest</h3>
+            <p>Deep bottle-green sunburst, brass hands. Made for the version of you that wears more linen.</p>
+            <p class="piece-price">$1,240</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="craft" id="craft">
+      <div class="wrap craft-grid">
+        <div class="craft-copy">
+          <h2>How a Meridian gets made</h2>
+          <p>Every case starts as a solid titanium blank and ends, eleven days later, on a watchmaker's bench in the Jura mountains. Nothing here is automated for the sake of speed.</p>
+          <ol class="craft-steps">
+            <li>
+              <span class="step-index">01</span>
+              <div>
+                <p class="step-title">Machining</p>
+                <p>The case is turned from a single titanium billet, leaving no seams for moisture or dust to find.</p>
+              </div>
+            </li>
+            <li>
+              <span class="step-index">02</span>
+              <div>
+                <p class="step-title">Finishing</p>
+                <p>Each surface is hand-brushed or polished in sequence, so light moves across the case the way it should.</p>
+              </div>
+            </li>
+            <li>
+              <span class="step-index">03</span>
+              <div>
+                <p class="step-title">Regulation</p>
+                <p>The movement is timed across six positions until it holds within four seconds a day.</p>
+              </div>
+            </li>
+            <li>
+              <span class="step-index">04</span>
+              <div>
+                <p class="step-title">Inspection</p>
+                <p>Pressure-tested to 100 metres, then worn for 48 hours before it's allowed to ship.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+        <div class="craft-visual" aria-hidden="true">
+          <div class="craft-bar"></div>
+          <div class="craft-bar"></div>
+          <div class="craft-bar"></div>
+          <div class="craft-bar"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="waitlist" id="waitlist">
+      <div class="wrap waitlist-inner">
+        <h2>The first run is limited to 500 pieces.</h2>
+        <p>Join the waitlist and we'll email you the day before it opens, not after it's gone.</p>
+        <form id="waitlistForm" class="waitlist-form" novalidate>
+          <div class="field">
+            <label for="email">Email address</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required>
+            <p class="field-error" id="emailError" role="alert"></p>
+          </div>
+          <button type="submit" class="btn btn-primary">Join the waitlist</button>
+        </form>
+        <p class="waitlist-confirm" id="waitlistConfirm" role="status"></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <a class="wordmark" href="#top">Meridian</a>
+      <p>Designed in small batches. Serviced for a lifetime.</p>
+      <p class="footer-meta">&copy; <span id="year"></span> Meridian Watch Co.</p>
+    </div>
+  </footer>
+
+<script src="script.js"></script>
+</body>
+</html>
