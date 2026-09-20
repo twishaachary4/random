@@ -1,0 +1,505 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>StudyOS — Study Planner</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            <div class="logo-mark">S</div>
+            <div>
+                <h2>StudyOS</h2>
+                <span>Personal command center</span>
+            </div>
+        </div>
+
+        <nav>
+            <a href="#dashboard" class="nav-link active">
+                <span>⌂</span>
+                Dashboard
+            </a>
+
+            <a href="#tasks" class="nav-link">
+                <span>✓</span>
+                Tasks
+            </a>
+
+            <a href="#schedule" class="nav-link">
+                <span>◷</span>
+                Schedule
+            </a>
+
+            <a href="#subjects" class="nav-link">
+                <span>◈</span>
+                Subjects
+            </a>
+
+            <a href="#focus" class="nav-link">
+                <span>◎</span>
+                Focus
+            </a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <div class="quote">
+                <span>“</span>
+                Small progress is still progress.
+            </div>
+
+            <div class="profile">
+                <div class="avatar">T</div>
+                <div>
+                    <strong>Student</strong>
+                    <small>Keep going.</small>
+                </div>
+            </div>
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN -->
+
+    <main class="main">
+
+        <!-- TOP BAR -->
+
+        <header class="topbar">
+
+            <div>
+                <p class="eyebrow">SUNDAY · 20 SEPTEMBER</p>
+                <h1>Good evening, <span>Student.</span></h1>
+                <p class="subtitle">
+                    Your study space is ready.
+                </p>
+            </div>
+
+            <div class="top-actions">
+                <button class="icon-btn" id="themeBtn">☾</button>
+                <button class="add-btn" id="openModal">
+                    + Add task
+                </button>
+            </div>
+
+        </header>
+
+
+        <!-- DASHBOARD -->
+
+        <section id="dashboard" class="dashboard-grid">
+
+            <!-- PROGRESS -->
+
+            <div class="card progress-card">
+
+                <div class="card-header">
+                    <div>
+                        <span class="label">TODAY'S PROGRESS</span>
+                        <h2 id="progressText">0%</h2>
+                    </div>
+
+                    <div class="progress-ring">
+                        <svg viewBox="0 0 100 100">
+                            <circle class="ring-bg" cx="50" cy="50" r="42"></circle>
+                            <circle id="ringProgress" class="ring-progress"
+                                cx="50" cy="50" r="42">
+                            </circle>
+                        </svg>
+
+                        <span id="ringNumber">0%</span>
+                    </div>
+                </div>
+
+                <div class="progress-bar">
+                    <div id="progressFill"></div>
+                </div>
+
+                <p class="muted">
+                    <span id="completedCount">0</span> of
+                    <span id="totalCount">0</span> tasks completed
+                </p>
+
+            </div>
+
+
+            <!-- FOCUS -->
+
+            <div class="card focus-mini">
+
+                <div class="mini-top">
+                    <span class="label">FOCUS SESSION</span>
+                    <span class="status-dot"></span>
+                </div>
+
+                <div class="timer-mini" id="miniTimer">
+                    25:00
+                </div>
+
+                <div class="timer-controls">
+                    <button id="miniStart">Start focus</button>
+                    <button id="miniReset">Reset</button>
+                </div>
+
+            </div>
+
+
+            <!-- STREAK -->
+
+            <div class="card streak-card">
+
+                <span class="label">CURRENT STREAK</span>
+
+                <div class="streak-number">
+                    <span id="streakNumber">0</span>
+                    <small>days</small>
+                </div>
+
+                <div class="streak-line">
+                    <span>MON</span>
+                    <span>TUE</span>
+                    <span>WED</span>
+                    <span>THU</span>
+                    <span>FRI</span>
+                    <span>SAT</span>
+                    <span>SUN</span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CONTENT GRID -->
+
+        <section class="content-grid">
+
+            <!-- TASKS -->
+
+            <div class="card tasks-card" id="tasks">
+
+                <div class="section-header">
+                    <div>
+                        <span class="label">YOUR DAY</span>
+                        <h2>Study tasks</h2>
+                    </div>
+
+                    <button class="text-btn" id="clearCompleted">
+                        Clear completed
+                    </button>
+                </div>
+
+                <div id="taskList" class="task-list">
+
+                    <div class="empty-state" id="emptyState">
+                        <div>✦</div>
+                        <h3>Your day is clear.</h3>
+                        <p>Add your first study task to get started.</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- SUBJECTS -->
+
+            <div class="card subjects-card" id="subjects">
+
+                <div class="section-header">
+                    <div>
+                        <span class="label">ACADEMICS</span>
+                        <h2>Subjects</h2>
+                    </div>
+
+                    <button class="circle-btn">+</button>
+                </div>
+
+                <div class="subject-list">
+
+                    <div class="subject">
+                        <div class="subject-icon purple">C</div>
+                        <div class="subject-info">
+                            <strong>Computer Science</strong>
+                            <span>6 topics</span>
+                        </div>
+                        <div class="subject-progress">
+                            <span>72%</span>
+                            <div>
+                                <i style="width:72%"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="subject">
+                        <div class="subject-icon blue">M</div>
+                        <div class="subject-info">
+                            <strong>Mathematics</strong>
+                            <span>8 topics</span>
+                        </div>
+                        <div class="subject-progress">
+                            <span>54%</span>
+                            <div>
+                                <i style="width:54%"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="subject">
+                        <div class="subject-icon green">P</div>
+                        <div class="subject-info">
+                            <strong>Physics</strong>
+                            <span>5 topics</span>
+                        </div>
+                        <div class="subject-progress">
+                            <span>38%</span>
+                            <div>
+                                <i style="width:38%"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="subject">
+                        <div class="subject-icon orange">E</div>
+                        <div class="subject-info">
+                            <strong>English</strong>
+                            <span>4 topics</span>
+                        </div>
+                        <div class="subject-progress">
+                            <span>81%</span>
+                            <div>
+                                <i style="width:81%"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SCHEDULE -->
+
+        <section class="card schedule-card" id="schedule">
+
+            <div class="section-header">
+
+                <div>
+                    <span class="label">UPCOMING</span>
+                    <h2>Study schedule</h2>
+                </div>
+
+                <button class="text-btn">View calendar →</button>
+
+            </div>
+
+            <div class="timeline">
+
+                <div class="timeline-item">
+
+                    <div class="time">
+                        <strong>09:00</strong>
+                        <span>AM</span>
+                    </div>
+
+                    <div class="timeline-line">
+                        <div class="timeline-dot"></div>
+                    </div>
+
+                    <div class="schedule-info">
+                        <strong>Computer Science</strong>
+                        <span>Data structures · 60 min</span>
+                    </div>
+
+                    <span class="tag purple-tag">Deep work</span>
+
+                </div>
+
+
+                <div class="timeline-item">
+
+                    <div class="time">
+                        <strong>11:30</strong>
+                        <span>AM</span>
+                    </div>
+
+                    <div class="timeline-line">
+                        <div class="timeline-dot"></div>
+                    </div>
+
+                    <div class="schedule-info">
+                        <strong>Mathematics</strong>
+                        <span>Practice problems · 45 min</span>
+                    </div>
+
+                    <span class="tag blue-tag">Practice</span>
+
+                </div>
+
+
+                <div class="timeline-item">
+
+                    <div class="time">
+                        <strong>04:00</strong>
+                        <span>PM</span>
+                    </div>
+
+                    <div class="timeline-line">
+                        <div class="timeline-dot"></div>
+                    </div>
+
+                    <div class="schedule-info">
+                        <strong>Physics</strong>
+                        <span>Electromagnetism · 60 min</span>
+                    </div>
+
+                    <span class="tag green-tag">Review</span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- FOCUS -->
+
+        <section class="focus-section card" id="focus">
+
+            <div class="focus-info">
+
+                <span class="label">FOCUS MODE</span>
+
+                <h2>Deep work.<br><span>No distractions.</span></h2>
+
+                <p>
+                    Choose a session length and get into the zone.
+                </p>
+
+                <div class="focus-options">
+                    <button class="focus-option active" data-time="25">25 min</button>
+                    <button class="focus-option" data-time="50">50 min</button>
+                    <button class="focus-option" data-time="90">90 min</button>
+                </div>
+
+            </div>
+
+            <div class="big-timer">
+
+                <div class="timer-circle">
+
+                    <svg viewBox="0 0 200 200">
+
+                        <circle
+                            class="big-ring-bg"
+                            cx="100"
+                            cy="100"
+                            r="88">
+                        </circle>
+
+                        <circle
+                            id="bigRing"
+                            class="big-ring-progress"
+                            cx="100"
+                            cy="100"
+                            r="88">
+                        </circle>
+
+                    </svg>
+
+                    <div class="big-time" id="bigTimer">
+                        25:00
+                    </div>
+
+                </div>
+
+                <div class="big-controls">
+                    <button id="bigStart">Start</button>
+                    <button id="bigReset">Reset</button>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ADD TASK MODAL -->
+
+    <div class="modal-overlay" id="modal">
+
+        <div class="modal">
+
+            <div class="modal-header">
+                <div>
+                    <span class="label">NEW TASK</span>
+                    <h2>Add study task</h2>
+                </div>
+
+                <button id="closeModal" class="close-btn">×</button>
+            </div>
+
+            <form id="taskForm">
+
+                <label>
+                    Task name
+                    <input
+                        type="text"
+                        id="taskName"
+                        placeholder="e.g. Revise arrays"
+                        required>
+                </label>
+
+                <label>
+                    Subject
+                    <select id="taskSubject">
+                        <option>Computer Science</option>
+                        <option>Mathematics</option>
+                        <option>Physics</option>
+                        <option>English</option>
+                        <option>Other</option>
+                    </select>
+                </label>
+
+                <label>
+                    Priority
+                    <select id="taskPriority">
+                        <option value="high">High</option>
+                        <option value="medium" selected>Medium</option>
+                        <option value="low">Low</option>
+                    </select>
+                </label>
+
+                <button class="submit-btn" type="submit">
+                    Create task →
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+```
